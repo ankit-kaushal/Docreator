@@ -1,0 +1,31 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	margin-right: 16px;
+}
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 8px;
+}
+.heading {
+	height: 22px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 150%;
+	color: #221f20;
+}
+.item {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.label {
+	height: 16px;
+	margin-bottom: 4px;
+  font-size: 12px;
+}
+.required_field::after {
+	color: #ee3425;
+	content: " *";
+}

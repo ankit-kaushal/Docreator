@@ -1,0 +1,11 @@
+.container {
+	margin: 40px;
+}
+
+.preview_container {
+	display: flex;
+	width: 830px;
+	margin-right: auto;
+	margin-bottom: 4px;
+	margin-left: auto;
+}

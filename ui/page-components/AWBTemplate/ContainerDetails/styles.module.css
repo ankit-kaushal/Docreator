@@ -1,0 +1,269 @@
+.flex {
+	display: flex;
+
+	&.flex_font_weight {
+		font-weight: bold;
+	}
+
+	&.flex_border_solid {
+		border-bottom: 1px solid var(--temp-color);
+	}
+
+	&.flex_in_flex {
+		flex: 0.4;
+	}
+
+	&.flex_in_flex_b {
+		flex: 2.2;
+	}
+
+	&.flex_justify_end {
+		justify-content: flex-end;
+	}
+
+	&.flex_justify_center {
+		justify-content: center;
+	}
+
+	&.flex_in_flex_empty_top {
+		flex: 0.134;
+	}
+
+	&.flex_in_flex_empty_bottom {
+		flex: 0.876;
+	}
+
+	&.block_a_container_section_rcp {
+		padding-left: 5px;
+	}
+
+	&.block_a_container_bottom_package {
+		padding-right: 3px;
+	}
+
+	&.block_e_container_commodity_text_section {
+		border-top: 1px solid var(--temp-color);
+	}
+
+	&.block_e_container_commodity_empty_section {
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.block_e_container_rateclass_section {
+		flex: 0.3;
+	}
+
+	&.grossweight_text {
+		padding-top: 9px;
+	}
+
+	&.commodity_text_style {
+		padding-top: 4px;
+	}
+
+	&.margin_remarks {
+		margin-top: 8px;
+	}
+
+	&.block_e_container_q_section {
+		padding-top: 1px;
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.chargeableweight_text {
+		padding-top: 6px;
+		padding-left: 4px;
+	}
+
+	&.block_a_container_top_package {
+		padding-right: 3px;
+		background-color: white;
+	}
+
+	&.block_a_container_volume {
+		position: absolute;
+		left: 0;
+		width: auto;
+		max-width: 70%;
+		padding-top: 40px;
+		padding-left: 16px;
+	}
+
+	&.sci_text_style {
+		padding: 2px 14px 2px 12px;
+		border-top: 1px solid var(--temp-color);
+		border-left: 1px solid var(--temp-color);
+	}
+
+	.input_control {
+		min-width: 220px;
+		height: 16px;
+		padding: 0 2px;
+		font-weight: bold;
+		border: none;
+		border-right: none;
+		border-radius: 0;
+		outline: none;
+	}
+
+	.input_control :focus {
+		outline: none;
+	}
+
+	.volume_weight_input {
+		width: 400px;
+		height: 16px;
+		margin-left: 5px;
+		font-weight: bold;
+		background: transparent;
+		border: none;
+		border-radius: 0;
+	}
+
+	.remarks_input {
+		width: 450px;
+		height: 16px;
+		margin-left: 5px;
+		font-weight: bold;
+		background: transparent;
+		border: none;
+		border-radius: 0;
+	}
+
+	.vol_weight_box {
+		flex-direction: column;
+		overflow: visible;
+		font-size: 8;
+	}
+
+	.remark_box {
+		width: auto;
+		padding-left: 2px;
+	}
+
+	.volume_box {
+		width: auto;
+	}
+
+	.handling_information_width {
+		width: 674px;
+		height: 16px;
+		padding: 0 2px;
+		border: none;
+	}
+}
+
+.flex p {
+	margin-bottom: 0;
+}
+
+.container {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container p {
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+.data {
+	font-family: 'Courier New', monospace;
+	color: #474747;
+	line-height: 1.2;
+	font-size: 14px;
+}
+
+
+.block {
+	display: flex;
+	border: 1px var(--temp-color) solid;
+
+	&.block_flex_border {
+		flex: 1;
+		border-top: 0;
+	}
+
+	&.handling_information {
+		min-height: 60px;
+	}
+
+	&.container_section {
+		min-height: 250px;
+	}
+}
+
+.font_style {
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font-family: 'Courier New', monospace;
+	color: #474747;
+	line-height: 1.2;
+	font-size: 14px;
+}
+
+.flex_col {
+	display: flex;
+	flex-direction: column;
+
+	&.inner_handling_information {
+		flex: 1.95;
+		justify-content: flex-start;
+		padding-left: 5px;
+	}
+
+	&.sci_handling_information {
+		flex: 0.05;
+		justify-content: flex-end;
+		height: 75px;
+		padding-left: 5px;
+	}
+
+	&.block_e_container_top_section {
+		flex: 0.134;
+	}
+
+	&.block_m_container_section {
+		flex: 2.6;
+	}
+
+	&.border_right_solid {
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.block_a_container_section {
+		flex: 0.5;
+	}
+
+	&.block_b_container_section {
+		flex: 0.9;
+	}
+
+	&.block_c_container_section {
+		flex: 0.07;
+	}
+
+	&.block_k_container_section {
+		flex: 1.4;
+	}
+
+	&.block_egi_container_section {
+		flex: 1;
+	}
+}
+
+.flex_row {
+	display: flex;
+
+	&.block_e_container_commodity_section {
+		flex: 0.7;
+	}
+
+	&.block_e_container_bottom_section {
+		flex: 0.876;
+	}
+
+	&.block_dfhjl_container_section {
+		flex: 0.07;
+		border-right: 1px solid var(--temp-color);
+	}
+}

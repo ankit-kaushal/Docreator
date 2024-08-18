@@ -1,0 +1,48 @@
+.row {
+	display: flex;
+	width: 100%;
+}
+.fieldarray {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.child {
+	width: 100%;
+}
+.child :global .ant-btn {
+	font-size: 10px;
+}
+.font_style {
+	padding-left: 4px;
+	margin: 0;
+	font-size: 12px;
+	line-height: 16px;
+	color: #cb6464;
+	letter-spacing: 0.02em;
+}
+.element {
+	padding: 4px;
+}
+.element :global .ui_select_input_placeholder {
+	font-size: 14px;
+	font-weight: 400;
+	color: #bdbdbd;
+}
+.element :global .ui_input_control::placeholder {
+	font-size: 14px;
+	font-weight: 400;
+	color: #bdbdbd;
+}
+.element :global .ant-select {
+	width: 100%;
+}
+.label {
+	height: 16px;
+	margin-bottom: 2px;
+	font-size: 11px;
+}
+.required_field::after {
+	color: #ee3425;
+	content: " *";
+}

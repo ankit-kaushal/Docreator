@@ -1,0 +1,33 @@
+.select_copies_container :global .ant-checkbox-group {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.select_copies_container :global .ant-checkbox-wrapper {
+  margin-right: 10px;
+  font-size: 10px;
+  width: 220px;
+  padding: 2px;
+}
+
+.select_checkbox {
+	font-weight: 600;
+}
+
+.label {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.download_container {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.download_container :global .ant-btn {
+  font-size: 12px;
+  margin-right: 8px;
+}

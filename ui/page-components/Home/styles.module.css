@@ -1,0 +1,40 @@
+.home_container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.generate {
+  margin: 20px;
+}
+
+.generate button {
+  margin-right: 16px;
+}
+
+.generate_image {
+  display: flex;
+  justify-content: right;
+}
+
+.developer {
+  margin: 20px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.design {
+  font-family: 'Merienda', cursive;
+  margin-right: 8px;
+}
+
+.my_name {
+  font-family: 'Oregano', cursive;
+  font-size: 24px;
+}

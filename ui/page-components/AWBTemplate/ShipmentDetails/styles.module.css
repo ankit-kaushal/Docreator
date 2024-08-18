@@ -1,0 +1,328 @@
+.flex {
+	display: flex;
+
+	&.flex_padding_left {
+		padding-left: 5px;
+	}
+
+	&.flex_border_solid {
+		border-bottom: 1px solid var(--temp-color);
+	}
+
+	&.trapezium {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		height: auto;
+		perspective: 50px;
+	}
+
+	&.trapezium::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: "";
+		border: 1px solid var(--temp-color);
+		border-bottom: none;
+		transform: rotateX(160deg) rotateY(0deg);
+	}
+
+	&.flex_font_bold {
+		font-weight: bold;
+	}
+
+	&.flex_justify_center {
+		justify-content: center;
+	}
+
+	&.flex_border_right {
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.flex_in_flex {
+		flex: 1;
+	}
+
+	&.flex_in_flex_b {
+		flex: 1.7;
+	}
+
+	&.flex_in_flex_c {
+		flex: 1.1;
+	}
+
+	&.flex_in_flex_d {
+		flex: 1.2;
+	}
+
+	&.destination_portcode {
+		flex: 0.3;
+	}
+
+	&.by_first_carrier {
+		flex: 0.385;
+	}
+
+	&.requested_flight_date_text {
+		padding-right: 7px;
+		padding-left: 10px;
+	}
+
+	&.routing_and_destination {
+		flex: 0.615;
+		height: 12px;
+	}
+
+	&.to_by {
+		flex: 0.5;
+	}
+
+	&.requested_flight_date_top_left {
+		flex: 0.25;
+	}
+
+	&.requested_flight_date_top_right {
+		flex: 0.32;
+	}
+
+	&.referrence_optional_bottom_middle {
+		flex: 0.8;
+	}
+
+	&.amount_of_insurance_top {
+		flex: 0.7;
+	}
+
+	&.amount_of_insurance_bottom {
+		flex: 1.3;
+	}
+
+	&.insurance {
+		flex: 1.41;
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.declared_carriage {
+		flex: 1.05;
+		padding-right: 2px;
+		padding-left: 2px;
+	}
+
+	&.currency_section {
+		padding-left: 6px;
+	}
+
+	&.currency_top_chgs {
+		flex: 0.8;
+	}
+
+	&.chgs {
+		flex: 0.6;
+		padding-left: 1px;
+	}
+
+	&.wtval_top {
+		flex: 0.25;
+	}
+
+	&.other_top {
+		flex: 0.3;
+	}
+
+	&.wtval_other_bottom_left_ppd_coll {
+		flex: 0.1;
+	}
+
+	&.optional_shipping_text {
+		padding-left: 3px;
+	}
+
+	.input_issuing_agent {
+		flex-direction: column;
+	}
+
+	.iata_code {
+		width: 170px;
+		font-weight: bold;
+		border: none;
+	}
+
+	.declared_carriage_box {
+		flex-direction: column;
+	}
+
+	.declared_value_carriage {
+		width: 108px;
+		height: 26px;
+		border: none;
+	}
+
+	.account_prepaid_info {
+		height: 24px;
+		border: none;
+	}
+
+	.text {
+		padding-right: 6px;
+		text-align: justify;
+	}
+}
+
+.container {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container p {
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+.data {
+	font-family: 'Courier New', monospace;
+	color: #474747;
+	line-height: 1.2;
+	font-size: 14px;
+}
+
+.font_style {
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font-family: 'Courier New', monospace;
+	color: #474747;
+	line-height: 1.2;
+	font-size: 14px;
+}
+
+.block {
+	display: flex;
+	border: 1px var(--temp-color) solid;
+
+	&.departure_airport {
+		flex: 1;
+		padding-left: 5px;
+		border: 0;
+	}
+}
+
+.block_row {
+	display: flex;
+	border: 1px var(--temp-color) solid;
+
+	&.blockrow_left_padding {
+		padding-left: 5px;
+	}
+
+	&.blockrow_border {
+		border: 0;
+	}
+
+	&.blockrow_in_flex {
+		flex: 1.2;
+	}
+
+	&.agent_iata_accounting_info {
+		flex: 1;
+	}
+
+	&.accounting_information {
+		flex-direction: column;
+		justify-content: flex-start;
+		min-height: 100px;
+		border-bottom: 0;
+	}
+
+	&.to_by_first_carrier {
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.to_by_to {
+		flex: 0.8;
+	}
+
+	&.currency_declared_value_to_by_flight {
+		flex: 1;
+	}
+}
+
+.block_col {
+	display: flex;
+	flex-direction: column;
+	border: 1px var(--temp-color) solid;
+
+	&.routing_block {
+		border-top: none;
+	}
+
+	&.blockcol_in_flex {
+		flex: 1;
+	}
+
+	&.blockcol_minheight {
+		min-height: 100px;
+	}
+
+	&.carrier_information {
+		border-right: 0;
+		border-bottom: 0;
+	}
+
+	&.blockcol_border {
+		border: 0;
+	}
+
+	&.optional_shipping_information {
+		border-left: 0;
+	}
+
+	&.referrence_optional {
+		flex: 1;
+	}
+
+	&.referrence_block {
+		border-left: none;
+	}
+}
+
+.flex_col {
+	display: flex;
+	flex-direction: column;
+
+	&.flexcol_border_right {
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.flexcol_in_flex {
+		flex: 1;
+	}
+
+	&.amount_of_insurance {
+		flex: 0.59;
+	}
+
+	&.currency {
+		flex: 1.4;
+	}
+}
+
+.flex_row {
+	display: flex;
+
+	&.referrence_optional_bottom {
+		flex: 0.66;
+	}
+
+	&.first_carrier {
+		flex: 1.7;
+	}
+
+	&.requested_wtval_other {
+		flex: 0.75;
+	}
+
+	&.referrence_optional_flight_date_top {
+		flex: 0.34;
+	}
+}

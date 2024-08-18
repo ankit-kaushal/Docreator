@@ -1,0 +1,179 @@
+.flex {
+	display: flex;
+
+	&.flex_font_bold {
+		font-weight: bold;
+	}
+
+	&.flex_left_padding {
+		padding-left: 5px;
+	}
+
+	&.not_negotiable_issuedby {
+		flex: 0.1;
+	}
+
+	&.airway_bill {
+		flex: 0.7;
+	}
+
+	&.font_weight {
+		font-weight: bold;
+	}
+
+	&.mawb_number_subdivision_second {
+		flex: 2.33;
+		padding-left: 2px;
+	}
+
+	&.same_validity {
+		flex: 0.9;
+		padding-top: 5px;
+	}
+
+	&.mawb_number_subdivision {
+		flex: 0.3;
+		justify-content: flex-end;
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.mawb_number_subdivision_portcode {
+		flex: 0.3;
+		justify-content: center;
+		border-right: 1px solid var(--temp-color);
+	}
+
+	&.mawb_bill_number {
+		flex: 1;
+		justify-content: flex-end;
+		padding-right: 3px;
+	}
+
+	&.business_name {
+		flex: 1;
+		justify-content: center;
+		border-bottom: 1px solid var(--temp-color);
+	}
+
+	.input_control {
+		min-width: 358px;
+		height: 16px;
+		padding: 0 2px;
+		font-weight: bold;
+		border: none;
+		border-radius: 0;
+		outline: none;
+	}
+
+	.input_control :focus {
+		outline: none;
+	}
+
+	.text {
+		padding-right: 6px;
+		text-align: justify;
+	}
+}
+
+.container {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.data {
+	font-family: 'Courier New', monospace;
+	color: #474747;
+	line-height: 1.2;
+	font-size: 14px;
+}
+
+.container p {
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+.font_style {
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font-family: 'Courier New', monospace;
+	color: #474747;
+	line-height: 1.2;
+	font-size: 14px;
+}
+
+.block {
+	display: flex;
+	border: 1px var(--temp-color) solid;
+
+	&.shipper_consignee_details {
+		flex: 1;
+		flex-direction: column;
+		min-height: 120px;
+		border-right: 0;
+		border-bottom: 0;
+	}
+
+	&.issuedby_validation_conditions {
+		flex: 1;
+		min-height: 100px;
+		text-align: justify;
+		border-bottom: 0;
+	}
+}
+
+.block_row {
+	display: flex;
+	border: 1px transparent solid;
+
+	&.mawb_number {
+		flex: 1;
+		min-height: 20px;
+		border: 0;
+	}
+}
+
+.block_col {
+	display: flex;
+	flex-direction: column;
+	border: 1px var(--temp-color) solid;
+
+	&.issuedby_validation_conditions {
+		flex: 1;
+		min-height: 100px;
+		border-bottom: 0;
+	}
+}
+
+.flex_col {
+	display: flex;
+	flex-direction: column;
+
+	&.shipper_consignee_account_number {
+		flex: 1;
+		height: 30px;
+		padding-left: 5px;
+		border-bottom: 1px solid var(--temp-color);
+		border-left: 1px solid var(--temp-color);
+	}
+}
+
+.flex_row {
+	display: flex;
+	align-items: center;
+
+	&.mawb_number_division {
+		flex: 1;
+	}
+
+	&.shipper_consignee_name_address {
+		flex: 1;
+		align-items: center;
+		padding-left: 5px;
+	}
+}
+
+.styled_text_area {
+	padding-left: 4px;
+	word-break: "break-all";
+	word-wrap: break-word;
+	line-break: auto;
+}

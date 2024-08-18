@@ -1,0 +1,16 @@
+.flex_col {
+	display: flex;
+	flex-direction: column;
+}
+
+.download_button_div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 8px;
+	background: #fff !important;
+}

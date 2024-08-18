@@ -1,0 +1,73 @@
+.date {
+	width: 100% !important;
+	height: 44px;
+}
+.item {
+	height: 100%;
+}
+
+.element :global .react-datepicker__input-container {
+	width: 100%;
+}
+.element :global .react-datepicker__input-container :hover {
+	border: 1px solid var(--color-accent-orange-2);
+}
+.element :global .react-datepicker__input-container input {
+	height: 42px;
+	border: 1px solid #ebebeb;
+	border-radius: 4px;
+}
+.element :global .react-datepicker__input-container input::placeholder {
+	font-size: 14px;
+	font-weight: 400;
+	color: #bdbdbd;
+}
+.element :global .ui_select_input_placeholder {
+	font-size: 14px;
+	font-weight: 400;
+	color: #bdbdbd;
+}
+.element :global .ui_input_control::placeholder {
+	font-size: 14px;
+	font-weight: 400;
+	color: #bdbdbd;
+}
+.element :global .ui_upload_droparea_container {
+	align-items: center;
+	min-height: 40px;
+	margin-bottom: 0;
+	border: 1px solid #ebebeb;
+	border-radius: 4px;
+}
+.element :global .ui_upload_droparea_icon svg {
+	height: 22px;
+	margin-top: 8px;
+}
+.element :global #booking_rate_procurement_proof {
+	height: unset;
+}
+.element :global .ui_upload_droparea_heading {
+	font-size: 14px;
+	font-weight: 400;
+	color: #bdbdbd;
+}
+.element :global .ui_upload_droparea_subheading {
+	font-size: 12px;
+	font-weight: 400;
+	color: #bdbdbd;
+}
+.element :global .ant-select {
+	width: 100%;
+}
+.element :global .ant-picker {
+	width: 100%;
+}
+.required_field::after {
+	color: #ee3425;
+	content: " *";
+}
+.label {
+	height: 16px;
+	margin-bottom: 4px;
+	font-size: 12px;
+}

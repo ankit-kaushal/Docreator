@@ -1,0 +1,7 @@
+{
+    "NAMESPACE": "ui",
+    "NS": "ui",
+    "PRESET_KEY": "ps",
+    "PRESET": "ui_ps",
+    "VALID_PRESETS": ["size", "themeType","type", "color", "theme","placement","linesize","direction"]
+}
