@@ -44,6 +44,17 @@ export async function POST(request) {
 	try {
 		await connectToDatabase();
 		const body = await request.json();
+		const existingPaste = await Pastes.findOne({ slug: body.slug });
+		if (existingPaste) {
+			return new Response(
+				JSON.stringify({ success: false, error: 'Slug already in use' }),
+				{
+					status: 400,
+					headers: { 'Content-Type': 'application/json' },
+				},
+			);
+		}
+
 		const paste = await Pastes.create(body);
 		return new Response(JSON.stringify({ success: true, data: paste }), {
 			status: 201,
