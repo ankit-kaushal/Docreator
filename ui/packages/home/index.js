@@ -1,9 +1,10 @@
-import { Button, notification } from 'antd';
+import { Button, notification, Spin } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { addDays } from 'date-fns';
+import { useState } from 'react';
 import styles from './styles.module.css';
 import controls from './configurations/controls';
 import Layout from '@/ui/commons/Layout';
@@ -51,6 +52,7 @@ const generateUniqueSlug = async () => {
 
 function Home() {
 	const router = useRouter();
+	const [loading, setLoading] = useState(false);
 
 	const {
 		control,
@@ -61,6 +63,8 @@ function Home() {
 	const fields = controls({ disabled: false });
 
 	const addNewPaste = async (values) => {
+		setLoading(true);
+
 		try {
 			const updatedValues = { ...values };
 
@@ -85,6 +89,8 @@ function Home() {
 				description:
 					error.response?.data?.error || 'An unexpected error occurred.',
 			});
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -104,8 +110,9 @@ function Home() {
 					type="primary"
 					icon={<PlusOutlined />}
 					onClick={handleSubmit(addNewPaste)}
+					disabled={loading}
 				>
-					Create New Paste
+					{loading ? <Spin size="small" /> : 'Create New Paste'}
 				</Button>
 			</div>
 			<div className={styles.developer}>

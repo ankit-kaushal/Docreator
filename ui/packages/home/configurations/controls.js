@@ -1,11 +1,11 @@
-const controls = ({ disabled = false }) => ({
+const controls = ({ disabled = false, rows = 12 }) => ({
 	content: [
 		{
 			name: 'content',
 			label: '',
 			type: 'textarea',
 			span: 12,
-			rows: 12,
+			rows,
 			disabled,
 			rules: {
 				required: 'Content is Required',

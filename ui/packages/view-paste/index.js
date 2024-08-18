@@ -20,7 +20,7 @@ function ViewPaste() {
 		formState: { errors },
 	} = useForm();
 
-	const fields = controls({ disabled: true });
+	const fields = controls({ disabled: true, rows: 16 });
 
 	const copyToClipboard = () => {
 		const { content } = data || {};
