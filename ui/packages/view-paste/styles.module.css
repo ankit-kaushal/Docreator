@@ -23,9 +23,18 @@
   margin: 16px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0 8px;
+}
+
+.header button {
+  margin: 0;
+}
 
 .title {
-  margin: 0 0 20px 8px;
   font-weight: 600;
   font-size: 16px;
 }

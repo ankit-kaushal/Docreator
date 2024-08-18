@@ -3,7 +3,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined, CopyOutlined } from '@ant-design/icons';
 import styles from './styles.module.css';
 import controls from '../home/configurations/controls';
 import Layout from '@/ui/commons/Layout';
@@ -21,6 +21,30 @@ function ViewPaste() {
 	} = useForm();
 
 	const fields = controls({ disabled: true });
+
+	const copyToClipboard = () => {
+		const { content } = data || {};
+
+		if (content) {
+			// eslint-disable-next-line no-undef
+			navigator.clipboard
+				.writeText(content)
+				.then(() => {
+					notification.success({
+						message: 'Copied!',
+						description: 'Content has been copied to the clipboard.',
+						placement: 'top',
+					});
+				})
+				.catch(() => {
+					notification.error({
+						message: 'Failed to Copy',
+						description: 'There was an error copying the content.',
+						placement: 'top',
+					});
+				});
+		}
+	};
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -52,7 +76,13 @@ function ViewPaste() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.pasted_box}>
-				<div className={styles.title}>{data.title || 'Untitled'}</div>
+				<div className={styles.header}>
+					<div className={styles.title}>{data.title || 'Untitled'}</div>
+					<Button icon={<CopyOutlined />} onClick={copyToClipboard}>
+						Copy
+					</Button>
+				</div>
+
 				<fieldset>
 					<legend>Your Pasted Content</legend>
 					<Layout fields={fields?.content} errors={errors} control={control} />
