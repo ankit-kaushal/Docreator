@@ -1,11 +1,30 @@
 import connectToDatabase from '../../../lib/mongodb';
 import Pastes from '../../../models/Pastes';
 
-export async function GET() {
+export async function GET(request) {
 	try {
 		await connectToDatabase();
-		const paste = await Pastes.find({});
-		return new Response(JSON.stringify({ success: true, data: paste }), {
+		const url = new URL(request.url);
+		const slug = url.searchParams.get('slug');
+		if (slug) {
+			const paste = await Pastes.findOne({ slug });
+			if (!paste) {
+				return new Response(
+					JSON.stringify({ success: false, error: 'Paste not found' }),
+					{
+						status: 404,
+						headers: { 'Content-Type': 'application/json' },
+					},
+				);
+			}
+
+			return new Response(JSON.stringify({ success: true, data: paste }), {
+				status: 200,
+				headers: { 'Content-Type': 'application/json' },
+			});
+		}
+		const pastes = await Pastes.find({});
+		return new Response(JSON.stringify({ success: true, data: pastes }), {
 			status: 200,
 			headers: { 'Content-Type': 'application/json' },
 		});
