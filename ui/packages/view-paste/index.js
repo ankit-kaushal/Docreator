@@ -1,4 +1,4 @@
-import { Button, notification } from 'antd';
+import { Button, notification, Spin } from 'antd';
 import Link from 'next/link';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -11,6 +11,7 @@ import { useForm } from '../../commons/Controller';
 
 function ViewPaste() {
 	const [data, setData] = useState({});
+	const [loading, setLoading] = useState(true);
 	const router = useRouter();
 	const pathname = usePathname();
 
@@ -48,6 +49,7 @@ function ViewPaste() {
 
 	useEffect(() => {
 		const fetchData = async () => {
+			setLoading(true);
 			const slug = pathname.replace(/\//g, '');
 			if (slug) {
 				try {
@@ -66,6 +68,8 @@ function ViewPaste() {
 						message: 'Error fetching pasted data',
 						description: error.message || 'An unexpected error occurred.',
 					});
+				} finally {
+					setLoading(false);
 				}
 			}
 		};
@@ -85,7 +89,20 @@ function ViewPaste() {
 
 				<fieldset>
 					<legend>Your Pasted Content</legend>
-					<Layout fields={fields?.content} errors={errors} control={control} />
+					{loading ? (
+						<div>
+							<div className={styles.loading}>
+								<Spin size="large" />
+								<span>Loading...</span>
+							</div>
+						</div>
+					) : (
+						<Layout
+							fields={fields?.content}
+							errors={errors}
+							control={control}
+						/>
+					)}
 				</fieldset>
 
 				<Button
