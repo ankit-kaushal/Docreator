@@ -8,7 +8,7 @@ import style from './style.module.css';
 const { Header } = Layout;
 
 function PageSider() {
-	const [collapsed, setCollapsed] = useState(false);
+	const [collapsed, setCollapsed] = useState(true);
 	const { Sider } = Layout;
 
 	const profileImage = () => <UserOutlined />;
