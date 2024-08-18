@@ -1,37 +1,22 @@
-.home_container {
+.container {
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.title {
-  font-size: 40px;
-  text-align: center;
-}
-
-.generate {
+.pasted_box {
   margin: 20px;
   width: 75%;
 }
 
-.generate fieldset {
+.pasted_box fieldset {
   border: 1px solid #b0afaf;
   border-radius: 10px;
   margin: 8px;
 }
 
-.generate legend {
+.pasted_box legend {
   font-weight: 500;
-}
-
-
-.generate button {
-  margin: 16px;
-}
-
-.generate_image {
-  display: flex;
-  justify-content: right;
 }
 
 .developer {
