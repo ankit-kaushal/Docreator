@@ -19,6 +19,26 @@
   font-weight: 500;
 }
 
+.pasted_box button {
+  margin: 16px;
+}
+
+
+.title {
+  margin: 0 0 20px 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.title::after {
+  margin-top: 4px;
+	display: block;
+	width: 50px;
+	height: 2px;
+	content: "";
+	background: #1677ff;
+}
+
 .developer {
   margin: 20px;
   position: fixed;

@@ -55,7 +55,7 @@ function Home() {
 		try {
 			const updatedValues = { ...values };
 
-			if (updatedValues.slug && updatedValues.slug.length <= 6) {
+			if (updatedValues.slug) {
 				const isUnique = await checkSlugUnique(updatedValues.slug);
 				if (isUnique) {
 					await axios.post('/api/paste', updatedValues);
