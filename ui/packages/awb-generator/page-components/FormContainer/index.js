@@ -1,7 +1,7 @@
 import { Steps, Button } from 'antd';
 import { useState } from 'react';
 import styles from './styles.module.css';
-import Layout from '../../commons/Layout';
+import Layout from '../../../../commons/Layout';
 
 const DECIMAL_PLACE = 2;
 

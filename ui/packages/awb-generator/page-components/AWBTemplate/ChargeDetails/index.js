@@ -4,7 +4,7 @@ import cl from '@/ui/commons/Components/utils/classname-processor';
 import OtherChargeDetails from './OtherChargeDetails';
 import styles from './styles.module.css';
 import WeightChargeDetails from './WeightChargeDetails';
-import { footerValues } from '@/ui/configurations/footer-values';
+import { footerValues } from '@/ui/packages/awb-generator/configurations/footer-values';
 
 const FOOTER_MAPPING = {
 	copy_12: 'COPY 12(FOR CUSTOMS)',

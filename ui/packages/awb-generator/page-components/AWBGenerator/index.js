@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import controls from '../../configurations/controls';
-import { useForm } from '../../commons/Controller';
+import { useForm } from '../../../../commons/Controller';
 import FormContainer from '../FormContainer';
-import { Modal } from '../../commons/Components';
+import { Modal } from '../../../../commons/Components';
 import GenerateDoc from '../GenerateDoc';
 
 const AGENT_OTHER_CHARGES_CODE = [
