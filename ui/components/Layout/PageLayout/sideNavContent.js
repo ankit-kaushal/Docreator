@@ -1,7 +1,7 @@
 import {
 	LayoutOutlined,
 	FolderViewOutlined,
-	CoffeeOutlined,
+	// CoffeeOutlined,
 	HomeOutlined,
 } from '@ant-design/icons';
 
@@ -23,11 +23,11 @@ const navData = [
 		path: '/sample',
 		icon: <FolderViewOutlined />,
 	},
-	{
-		name: 'Support',
-		path: 'https://www.buymeacoffee.com/ankitkaushal',
-		icon: <CoffeeOutlined />,
-	},
+	// {
+	// 	name: 'Support',
+	// 	path: 'https://www.buymeacoffee.com/ankitkaushal',
+	// 	icon: <CoffeeOutlined />,
+	// },
 ];
 export { navRoute };
 export default navData;
