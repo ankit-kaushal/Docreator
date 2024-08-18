@@ -20,7 +20,7 @@ function ViewPaste() {
 		formState: { errors },
 	} = useForm();
 
-	const fields = controls();
+	const fields = controls({ disabled: true });
 
 	useEffect(() => {
 		const fetchData = async () => {

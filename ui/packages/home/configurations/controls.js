@@ -1,4 +1,4 @@
-const controls = () => ({
+const controls = ({ disabled = false }) => ({
 	content: [
 		{
 			name: 'content',
@@ -6,6 +6,7 @@ const controls = () => ({
 			type: 'textarea',
 			span: 12,
 			rows: 12,
+			disabled,
 			rules: {
 				required: 'Content is Required',
 			},
@@ -33,12 +34,13 @@ const controls = () => ({
 			type: 'select',
 			placeholder: 'Select Expiry',
 			span: 6,
+			value: '2_days',
 			options: [
 				{ label: '1 Day', value: '1_day' },
-				{ label: '2 Days', value: '2_day' },
+				{ label: '2 Days', value: '2_days' },
 				{ label: '1 Week', value: '1_week' },
 				{ label: '1 Month', value: '1_month' },
-				{ label: 'Never', value: 'Never' },
+				{ label: 'Never', value: 'never' },
 			],
 			rows: 6,
 		},

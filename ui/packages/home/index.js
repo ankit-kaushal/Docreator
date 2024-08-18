@@ -3,6 +3,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { addDays } from 'date-fns';
 import styles from './styles.module.css';
 import controls from './configurations/controls';
 import Layout from '@/ui/commons/Layout';
@@ -14,6 +15,14 @@ const svgStyle = {
 	backgroundRepeat: 'no-repeat',
 	backgroundPosition: 'right',
 	height: '40vh',
+};
+
+const expiryMapping = {
+	'1_day': addDays(new Date(), 1),
+	'2_days': addDays(new Date(), 2),
+	'1_week': addDays(new Date(), 7),
+	'1_month': addDays(new Date(), 30),
+	never: '',
 };
 
 const generateRandomSlug = () => {
@@ -49,11 +58,15 @@ function Home() {
 		formState: { errors },
 	} = useForm();
 
-	const fields = controls();
+	const fields = controls({ disabled: false });
 
 	const addNewPaste = async (values) => {
 		try {
 			const updatedValues = { ...values };
+
+			if (updatedValues.expiry && expiryMapping[updatedValues.expiry]) {
+				updatedValues.expiry = expiryMapping[updatedValues.expiry];
+			}
 
 			if (updatedValues.slug) {
 				const isUnique = await checkSlugUnique(updatedValues.slug);
