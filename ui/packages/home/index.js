@@ -2,6 +2,7 @@ import { Button, notification } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 import controls from './configurations/controls';
 import Layout from '@/ui/commons/Layout';
@@ -40,6 +41,8 @@ const generateUniqueSlug = async () => {
 };
 
 function Home() {
+	const router = useRouter();
+
 	const {
 		control,
 		handleSubmit,
@@ -56,11 +59,13 @@ function Home() {
 				const isUnique = await checkSlugUnique(updatedValues.slug);
 				if (isUnique) {
 					await axios.post('/api/paste', updatedValues);
+					router.push(`/${updatedValues.slug}`);
 					return;
 				}
 			}
 			updatedValues.slug = await generateUniqueSlug();
 			await axios.post('/api/paste', updatedValues);
+			router.push(`/${updatedValues.slug}`);
 		} catch (error) {
 			notification.error({
 				message: 'Failed to Add New Paste',
