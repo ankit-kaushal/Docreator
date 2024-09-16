@@ -9,6 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
+			<meta name="google-adsense-account" content="ca-pub-1816177424340336" />
 			<body>
 				<PageLayout>{children}</PageLayout>
 			</body>
