@@ -9,6 +9,7 @@ import styles from './styles.module.css';
 import controls from './configurations/controls';
 import Layout from '@/ui/commons/Layout';
 import { useForm } from '../../commons/Controller';
+import Adsense from '@/ui/commons/Adsense';
 
 const svgStyle = {
 	backgroundImage: `url(${'generate.svg'})`,
@@ -116,6 +117,7 @@ function Home() {
 				</Button>
 			</div>
 			<div className={styles.developer}>
+				<Adsense client="ca-pub-1816177424340336" slot="1646560170" />
 				<span className={styles.design}>Designed & Developed by</span>
 				<Link href="https://www.ankitkaushal.tech/" className={styles.my_name}>
 					Ankit Kaushal
