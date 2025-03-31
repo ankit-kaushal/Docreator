@@ -117,7 +117,7 @@ function Home() {
 				</Button>
 			</div>
 			<div className={styles.developer}>
-				<Adsense client="ca-pub-1816177424340336" slot="1646560170" />
+				<Adsense client="ca-pub-4489981300925306" slot="1646560170" />
 				<span className={styles.design}>Designed & Developed by</span>
 				<Link href="https://www.ankitkaushal.tech/" className={styles.my_name}>
 					Ankit Kaushal
