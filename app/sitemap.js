@@ -1,29 +1,41 @@
-import { prisma } from '@/lib/prisma';
+import mongoose from 'mongoose';
+
+const MONGODB_URI =
+	'mongodb+srv://ankitkaushal882:zyK1E0P5ies4eegg@cluster0.pylq1yt.mongodb.net/docreator?retryWrites=true&w=majority&appName=Cluster0';
 
 export default async function sitemap() {
 	const baseUrl = 'https://docreator.in';
 
-	// Static routes
 	const routes = ['', '/generate'].map((route) => ({
 		url: `${baseUrl}${route}`,
 		lastModified: new Date().toISOString(),
 	}));
 
-	// Dynamic routes
-	const documents = await prisma.document.findMany({
-		select: {
-			id: true,
-			updatedAt: true,
-		},
-		where: {
-			isPublic: true,
-		},
-	});
+	try {
+		if (!mongoose.connections[0].readyState) {
+			await mongoose.connect(MONGODB_URI);
+		}
 
-	const dynamicRoutes = documents.map((doc) => ({
-		url: `${baseUrl}/d/${doc.id}`,
-		lastModified: doc.updatedAt.toISOString(),
-	}));
+		const Document =
+			mongoose.models.Document ||
+			mongoose.model('Document', {
+				isPublic: Boolean,
+				updatedAt: Date,
+			});
 
-	return [...routes, ...dynamicRoutes];
+		const documents = await Document.find(
+			{ isPublic: true },
+			{ _id: 1, updatedAt: 1 },
+		);
+
+		const dynamicRoutes = documents.map((doc) => ({
+			url: `${baseUrl}/${doc.id.toString()}`,
+			lastModified: doc.updatedAt.toISOString(),
+		}));
+
+		return [...routes, ...dynamicRoutes];
+	} catch (error) {
+		console.error('Sitemap generation error:', error);
+		return routes;
+	}
 }
