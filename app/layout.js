@@ -5,7 +5,7 @@ export const metadata = {
 	title: 'Docreator',
 	description: 'Simple Text and Code Sharing Tool',
 	keywords:
-		'document generator, document creator, document automation, pdf generator, awb generator, awb creator, awb automation, awb, airway bill generator',
+		'docreator, document generator, document creator, document automation, pdf generator, awb generator, awb creator, awb automation, awb, airway bill generator',
 	openGraph: {
 		title: 'Docreator - Simple Text and Code Sharing Tool',
 		description: 'Manage texts and codes effortlessly with Docreator',
