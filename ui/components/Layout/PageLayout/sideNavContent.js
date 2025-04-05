@@ -3,6 +3,7 @@ import {
 	FolderViewOutlined,
 	// CoffeeOutlined,
 	HomeOutlined,
+	CloudUploadOutlined,
 } from '@ant-design/icons';
 
 const navRoute = ['/', '/sample'];
@@ -22,6 +23,11 @@ const navData = [
 		name: 'AWB Sample',
 		path: '/sample',
 		icon: <FolderViewOutlined />,
+	},
+	{
+		name: 'File Uploader',
+		path: '/file-uploader',
+		icon: <CloudUploadOutlined />,
 	},
 	// {
 	// 	name: 'Support',

@@ -1,0 +1,37 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.uploadWrapper :global(.ant-upload-list-item) {
+  justify-content: center;
+}
+
+.uploadWrapper :global(.ant-upload-list-item-name) {
+  flex: unset !important;
+}
+
+.fileInput {
+  margin: 20px 0;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.result a {
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.result a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.result a:hover {
+  text-decoration: underline;
+}
