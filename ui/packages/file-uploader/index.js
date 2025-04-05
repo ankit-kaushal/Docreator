@@ -1,10 +1,25 @@
 import { useState } from 'react';
-import { Upload, message, Button, Space } from 'antd';
-import { UploadOutlined, CopyOutlined } from '@ant-design/icons';
+import { Upload, message, Button, Space, Input, Modal } from 'antd';
+import { UploadOutlined, CopyOutlined, LockOutlined } from '@ant-design/icons';
 import styles from './styles.module.css';
 
 function FileUploader() {
 	const [uploadedUrl, setUploadedUrl] = useState('');
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const [isModalVisible, setIsModalVisible] = useState(true);
+	const [passkey, setPasskey] = useState('');
+
+	const correctPasskey = process.env.NEXT_PUBLIC_UPLOADER_PASSKEY;
+
+	const handleAuth = () => {
+		if (passkey === correctPasskey) {
+			setIsAuthenticated(true);
+			setIsModalVisible(false);
+			message.success('Access granted!');
+		} else {
+			message.error('Incorrect passkey');
+		}
+	};
 
 	const handleUpload = async (options) => {
 		const { file, onSuccess, onError } = options;
@@ -53,6 +68,27 @@ function FileUploader() {
 		setUploadedUrl('');
 		return true;
 	};
+
+	if (!isAuthenticated) {
+		return (
+			<Modal
+				title="Enter Passkey"
+				open={isModalVisible}
+				onOk={handleAuth}
+				onCancel={() => window.history.back()}
+				closable={false}
+				maskClosable={false}
+			>
+				<Input.Password
+					prefix={<LockOutlined />}
+					placeholder="Enter passkey"
+					value={passkey}
+					onChange={(e) => setPasskey(e.target.value)}
+					onPressEnter={handleAuth}
+				/>
+			</Modal>
+		);
+	}
 
 	return (
 		<div className={styles.container}>
