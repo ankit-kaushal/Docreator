@@ -119,7 +119,10 @@ function Home() {
 			<div className={styles.developer}>
 				<Adsense client="ca-pub-4489981300925306" slot="1646560170" />
 				<span className={styles.design}>Designed & Developed by</span>
-				<Link href="https://www.ankitkaushal.tech/" className={styles.my_name}>
+				<Link
+					href="https://www.ankitkaushal.in.net/"
+					className={styles.my_name}
+				>
 					Ankit Kaushal
 				</Link>
 			</div>

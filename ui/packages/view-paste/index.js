@@ -118,7 +118,10 @@ function ViewPaste() {
 			</div>
 			<div className={styles.developer}>
 				<span className={styles.design}>Designed & Developed by</span>
-				<Link href="https://www.ankitkaushal.tech/" className={styles.my_name}>
+				<Link
+					href="https://www.ankitkaushal.in.net/"
+					className={styles.my_name}
+				>
 					Ankit Kaushal
 				</Link>
 			</div>
