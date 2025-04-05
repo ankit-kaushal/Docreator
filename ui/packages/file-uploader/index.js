@@ -3,6 +3,12 @@ import { Upload, message, Button, Space, Input, Modal } from 'antd';
 import { UploadOutlined, CopyOutlined, LockOutlined } from '@ant-design/icons';
 import styles from './styles.module.css';
 
+const acceptedFileTypes = {
+	'image/*': ['.png', '.jpg', '.jpeg', '.gif', '.webp'],
+	'video/*': ['.mp4', '.webm', '.ogg', '.mov'],
+	'application/pdf': ['.pdf'],
+};
+
 function FileUploader() {
 	const [uploadedUrl, setUploadedUrl] = useState('');
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -70,6 +76,33 @@ function FileUploader() {
 		}
 	};
 
+	const beforeUpload = (file) => {
+		const isAccepted = Object.entries(acceptedFileTypes).some(
+			([type, extensions]) => {
+				if (
+					file.type.startsWith(type.replace('*', '')) ||
+					extensions.some((ext) => file.name.toLowerCase().endsWith(ext))
+				) {
+					return true;
+				}
+				return false;
+			},
+		);
+
+		if (!isAccepted) {
+			message.error('You can only upload images, videos, or PDF files!');
+			return Upload.LIST_IGNORE;
+		}
+
+		const sizeLimit = 100 * 1024 * 1024; // 100MB
+		if (file.size > sizeLimit) {
+			message.error('File must be smaller than 100MB!');
+			return Upload.LIST_IGNORE;
+		}
+
+		return true;
+	};
+
 	const handleRemove = () => {
 		setUploadedUrl('');
 		return true;
@@ -109,6 +142,8 @@ function FileUploader() {
 					showUploadList
 					maxCount={1}
 					onRemove={handleRemove}
+					beforeUpload={beforeUpload}
+					accept=".jpg,.jpeg,.png,.gif,.webp,.mp4,.webm,.ogg,.mov,.pdf"
 				>
 					<Button icon={<UploadOutlined />}>Click to Upload</Button>
 				</Upload>
