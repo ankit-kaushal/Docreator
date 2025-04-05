@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Upload, message, Button, Space, Input, Modal } from 'antd';
 import { UploadOutlined, CopyOutlined, LockOutlined } from '@ant-design/icons';
 import styles from './styles.module.css';
@@ -6,8 +6,14 @@ import styles from './styles.module.css';
 function FileUploader() {
 	const [uploadedUrl, setUploadedUrl] = useState('');
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
-	const [isModalVisible, setIsModalVisible] = useState(true);
+	const [isModalVisible, setIsModalVisible] = useState(false);
 	const [passkey, setPasskey] = useState('');
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+		setIsModalVisible(true);
+	}, []);
 
 	const correctPasskey = process.env.NEXT_PUBLIC_UPLOADER_PASSKEY;
 
@@ -68,6 +74,10 @@ function FileUploader() {
 		setUploadedUrl('');
 		return true;
 	};
+
+	if (!mounted) {
+		return null;
+	}
 
 	if (!isAuthenticated) {
 		return (
