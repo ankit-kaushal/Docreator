@@ -1,7 +1,8 @@
 import { Layout, Menu, Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import navData from './sideNavContent';
 import style from './style.module.css';
 
@@ -9,7 +10,13 @@ const { Header } = Layout;
 
 function PageSider() {
 	const [collapsed, setCollapsed] = useState(true);
+	const [selectedKey, setSelectedKey] = useState('');
 	const { Sider } = Layout;
+	const pathname = usePathname();
+
+	useEffect(() => {
+		setSelectedKey(pathname);
+	}, [pathname]);
 
 	const profileImage = () => <UserOutlined />;
 
@@ -23,7 +30,7 @@ function PageSider() {
 				height: '100vh',
 			}}
 		>
-			<Menu theme="dark" mode="inline">
+			<Menu theme="dark" mode="inline" selectedKeys={[selectedKey]}>
 				<Header
 					className="site-layout-background"
 					style={{ color: 'white', paddingLeft: '20px' }}
