@@ -119,7 +119,7 @@ function ViewPaste() {
 			<div className={styles.developer}>
 				<span className={styles.design}>Designed & Developed by</span>
 				<Link
-					href="https://www.ankitkaushal.in.net/"
+					href="https://www.ankitkaushal.in/"
 					className={styles.my_name}
 				>
 					Ankit Kaushal
