@@ -14,13 +14,13 @@ export const metadata = {
 		],
 		apple: [{ url: '/apple-touch-icon.png' }],
 	},
-	description: 'Simple Text and Code Sharing Tool',
+	description: 'Simple Text and Code Sharing Tool | Free AWB Generator',
 	metadataBase: new URL('https://docreator.in'),
 	alternates: {
 		canonical: '/',
 	},
 	keywords:
-		'docreator, document generator, document creator, document automation, pdf generator, awb generator, awb creator, awb automation, awb, airway bill generator',
+		'docreator, document generator, document creator, document automation, pdf generator, awb generator, awb creator, awb automation, awb, airway bill generator, free awb generator, free awb creator, ',
 	openGraph: {
 		title: 'Docreator - Simple Text and Code Sharing Tool',
 		description: 'Manage texts and codes effortlessly with Docreator',

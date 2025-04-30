@@ -110,7 +110,7 @@ function AwbGenerator() {
 
 	return (
 		<div className={styles.container}>
-			<h1>AWB Generator</h1>
+			<h1>Free AWB Generator</h1>
 			<FormContainer
 				formValues={formValues}
 				fields={fields}
