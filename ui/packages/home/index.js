@@ -116,7 +116,7 @@ function Home() {
 					{loading ? <Spin size="small" /> : 'Create New Paste'}
 				</Button>
 			</div>
-			<div className={styles.developer}>
+			{/* <div className={styles.developer}>
 				<Adsense client="ca-pub-4489981300925306" slot="1646560170" />
 				<span className={styles.design}>Designed & Developed by</span>
 				<Link
@@ -125,7 +125,7 @@ function Home() {
 				>
 					Ankit Kaushal
 				</Link>
-			</div>
+			</div> */}
 		</div>
 	);
 }

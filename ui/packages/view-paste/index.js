@@ -116,7 +116,7 @@ function ViewPaste() {
 				/>
 				<span>Create New Paste</span>
 			</div>
-			<div className={styles.developer}>
+			{/* <div className={styles.developer}>
 				<span className={styles.design}>Designed & Developed by</span>
 				<Link
 					href="https://www.ankitkaushal.in/"
@@ -124,7 +124,7 @@ function ViewPaste() {
 				>
 					Ankit Kaushal
 				</Link>
-			</div>
+			</div> */}
 		</div>
 	);
 }
